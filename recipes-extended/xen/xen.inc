@@ -1,4 +1,4 @@
-inherit xenclient
+inherit openxt
 
 # For deb-xenstore-client-tools and deb-libxenstore to pickup patches
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"

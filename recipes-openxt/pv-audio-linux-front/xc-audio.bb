@@ -10,7 +10,7 @@ DEPENDS = "virtual/kernel v4v-module"
 
 S = "${WORKDIR}/git/xc-audio"
 
-inherit xenclient 
+inherit openxt 
 inherit module
 
 do_compile() {

@@ -13,5 +13,5 @@ S = "${WORKDIR}/git/icbinn-fuse"
 
 inherit autotools
 inherit pkgconfig
-inherit xenclient
+inherit openxt
 

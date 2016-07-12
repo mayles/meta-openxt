@@ -13,5 +13,5 @@ S = "${WORKDIR}/git/libxenacpi"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 CFLAGS += "-I${STAGING_KERNEL_DIR}/include"
 
-inherit autotools-brokensep pkgconfig lib_package xenclient
+inherit autotools-brokensep pkgconfig lib_package openxt
 

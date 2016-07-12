@@ -16,8 +16,8 @@ SRC_URI = "ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${PV}.tar.
            file://scpv4v \
            ${@base_contains('DISTRO_FEATURES', 'pam', '${PAM_SRC_URI}', '', d)}"
 
-SRC_URI_append_xenclient-dom0 = " file://init "
-PACKAGES_prepend_xenclient-dom0 = " ${PN}-sshd-tcp-init "
+SRC_URI_append_openxt-dom0 = " file://init "
+PACKAGES_prepend_openxt-dom0 = " ${PN}-sshd-tcp-init "
 FILES_${PN}-sshd-tcp-init = "/etc/init.d/sshd"
 
 SRC_URI[md5sum] = "3345cbf4efe90ffb06a78670ab2d05d5"
@@ -44,10 +44,10 @@ pkg_postinst_${PN}-sshd_append () {
     ssh-keygen -q -f $D/etc/ssh/ssh_host_dsa_key_v4v -N '' -t dsa
 }
 
-do_install_append_xenclient-dom0() {
+do_install_append_openxt-dom0() {
 	install -m 0755 ${WORKDIR}/init ${D}/etc/init.d/sshd
 }
 
-INITSCRIPT_PACKAGES_append_xenclient-dom0 = " ${PN}-sshd-tcp-init "
+INITSCRIPT_PACKAGES_append_openxt-dom0 = " ${PN}-sshd-tcp-init "
 INITSCRIPT_NAME_${PN}-sshd-tcp-init = "sshd"
 INITSCRIPT_PARAMS_${PN}-sshd-tcp-init = "defaults 9"

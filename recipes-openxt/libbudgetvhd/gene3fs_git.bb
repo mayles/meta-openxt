@@ -14,6 +14,6 @@ S = "${WORKDIR}/git/gene3fs"
 
 inherit autotools
 inherit pkgconfig
-inherit xenclient
+inherit openxt
 
 BBCLASSEXTEND="native"

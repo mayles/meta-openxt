@@ -1,4 +1,4 @@
-inherit xenclient
+inherit openxt
 
 DEPENDS += "bc-native"
 

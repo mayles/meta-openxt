@@ -2,9 +2,9 @@ inherit findlib
 DESCRIPTION = "db tools"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM="file://../COPYING;md5=4641e94ec96f98fabc56ff9cc48be14b"
-DEPENDS = "xenclient-rpcgen-native xenclient-idl ocaml-dbus xenclient-toolstack"
+DEPENDS = "openxt-rpcgen-native openxt-idl ocaml-dbus openxt-toolstack"
 
-DEPENDS_append_xenclient-nilfvm += " ${@deb_bootstrap_deps(d)} "
+DEPENDS_append_openxt-nilfvm += " ${@deb_bootstrap_deps(d)} "
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -23,8 +23,8 @@ SRC_URI += " file://db-exists-dom0 \
 
 S = "${WORKDIR}/git/dbd"
 
-inherit xenclient
-inherit ${@"xenclient-simple-deb"if(d.getVar("MACHINE",1)=="xenclient-nilfvm")else("null")}
+inherit openxt
+inherit ${@"openxt-simple-deb"if(d.getVar("MACHINE",1)=="openxt-nilfvm")else("null")}
 
 FILES_${PN} = " /usr/bin/db-cmd /usr/bin/db-ls /usr/bin/db-read /usr/bin/db-write /usr/bin/db-nodes /usr/bin/db-exists /usr/bin/db-rm /usr/bin/db-cat "
 FILES_${PN} += " /usr/bin/db-ls-dom0 /usr/bin/db-read-dom0 /usr/bin/db-write-dom0 /usr/bin/db-nodes-dom0 /usr/bin/db-exists-dom0 /usr/bin/db-rm-dom0 /usr/bin/db-cat-dom0 "
@@ -32,9 +32,9 @@ FILES_${PN} += " /usr/bin/db-ls-dom0 /usr/bin/db-read-dom0 /usr/bin/db-write-dom
 DEB_SUITE = "wheezy"
 DEB_ARCH = "i386"
 
-DEB_NAME = "xenclient-dbtools"
-DEB_DESC="Tools to access the XenClient database from a service VM"
-DEB_DESC_EXT="This package provides a set of tools to access the XenClient database from a service VM."
+DEB_NAME = "openxt-dbtools"
+DEB_DESC="Tools to access the OpenXT database from a service VM"
+DEB_DESC_EXT="This package provides a set of tools to access the OpenXT database from a service VM."
 DEB_SECTION="misc"
 DEB_PKG_MAINTAINER = "Citrix Systems <customerservice@citrix.com>"
 
@@ -72,8 +72,8 @@ do_install() {
         install -m 0755 ${WORKDIR}/db-write-dom0 ${D}/usr/bin/db-cat-dom0
 }
 
-# Had to duplicate, can't _append as xenclient-deb overrides it
-do_install_xenclient-nilfvm() {
+# Had to duplicate, can't _append as openxt-deb overrides it
+do_install_openxt-nilfvm() {
         install -m 0755 -d ${D}/usr/bin
 
         install -m 0755 db-cmd ${D}/usr/bin/db-cmd

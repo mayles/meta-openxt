@@ -8,7 +8,7 @@ SRCREV = "${AUTOREV}"
 SRC_URI = "git://${OPENXT_GIT_MIRROR}/icbinn.git;protocol=${OPENXT_GIT_PROTOCOL};branch=${OPENXT_BRANCH}"
 SRC_URI += "file://icbinn_svc.initscript"
 
-DEPENDS = "libv4v libtirpc xenclient-idl xenclient-rpcgen-native libxcdbus"
+DEPENDS = "libv4v libtirpc openxt-idl openxt-rpcgen-native libxcdbus"
 EXTRA_OECONF += "--with-idldir=${STAGING_IDLDIR} --with-v4v --with-xcdbus"
 
 PACKAGES =+ "${PN}-server"
@@ -21,7 +21,7 @@ PROVIDES += "${PN}-client"
 
 S = "${WORKDIR}/git/libicbinn"
 
-inherit autotools-brokensep pkgconfig lib_package xenclient
+inherit autotools-brokensep pkgconfig lib_package openxt
 
 INITSCRIPT_NAME = "icbinn_svc"
 INITSCRIPT_PARAMS = "defaults 76"

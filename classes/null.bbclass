@@ -1,1 +1,1 @@
-# Empty class. (Used in xenclient-src-package and xenclient-image-src-package.)
+# Empty class. (Used in openxt-src-package and openxt-image-src-package.)

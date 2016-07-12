@@ -16,7 +16,7 @@ SRC_URI = "http://downloads.sourceforge.net/trousers/${PN}-${PV}.tar.gz \
            file://tpm-tools-passwd-stdin.patch;patch=1 \
 "
 
-inherit xenclient autotools-brokensep
+inherit openxt autotools-brokensep
 
 PACKAGES =+ "${PN}-sa"
 FILES_${PN}-sa = "/usr/bin/tpm_extendpcr_sa"

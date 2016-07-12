@@ -8,5 +8,5 @@ SRC_URI = "http://code.coreboot.org/p/seabios/downloads/get/${PN}-${PV}.tar.gz;n
 
 S = "${WORKDIR}/${PN}-${PV}"
 
-inherit xenclient
+inherit openxt
 

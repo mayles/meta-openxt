@@ -15,7 +15,7 @@ S = "${WORKDIR}/git"
 #EXTRA_OECONF += "--with-libxc=yes"
 EXTRA_OEMAKE += "LIBDIR=${STAGING_LIBDIR}"
 
-inherit autotools pkgconfig xenclient
+inherit autotools pkgconfig openxt
 
 do_configure_prepend(){
      export VERSION="${VERSION}"

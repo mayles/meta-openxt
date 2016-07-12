@@ -10,8 +10,8 @@ PV = "0+git${SRCPV}"
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://${OPENXT_GIT_MIRROR}/icbinn.git;protocol=${OPENXT_GIT_PROTOCOL};branch=${OPENXT_BRANCH}"
 
-DEPENDS = "swig-native libicbinn-resolved xenclient-rpcgen-native"
+DEPENDS = "swig-native libicbinn-resolved openxt-rpcgen-native"
 RDEPENDS_${PN} += "python-lang"
 
 inherit distutils
-inherit xenclient
+inherit openxt

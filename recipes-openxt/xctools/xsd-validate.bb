@@ -10,7 +10,7 @@ SRC_URI = "git://${OPENXT_GIT_MIRROR}/xctools.git;protocol=${OPENXT_GIT_PROTOCOL
 
 S = "${WORKDIR}/git/xsd-validate"
 
-inherit autotools xenclient pkgconfig
+inherit autotools openxt pkgconfig
 
 do_install_append() {
 	install -d ${D}/usr/bin

@@ -13,7 +13,7 @@ SRC_URI = "git://${OPENXT_GIT_MIRROR}/ocaml.git;protocol=${OPENXT_GIT_PROTOCOL};
            file://remove-absolute-linker-path-from-lib.patch \
 "
 
-inherit xenclient
+inherit openxt
 #inherit native
 inherit cross
 

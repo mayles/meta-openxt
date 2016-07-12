@@ -8,4 +8,4 @@ SRC_URI = "http://savannah.gnu.org/download/vgabios/${PN}-${PV}.tgz;name=tarball
 
 S = "${WORKDIR}/${PN}-${PV}"
 
-inherit xenclient
+inherit openxt

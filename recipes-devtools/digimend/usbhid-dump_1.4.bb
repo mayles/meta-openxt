@@ -1,6 +1,6 @@
 DESCRIPTION = "USB HID device dumping utility"
 
-inherit xenclient
+inherit openxt
 inherit autotools pkgconfig lib_package
 
 LICENSE = "GPLv2"

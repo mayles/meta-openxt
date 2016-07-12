@@ -11,7 +11,7 @@ PR = "r4"
 
 SRC_URI += "file://uim-module-manager.patch;patch=1 \
             file://fix-missing-includes.patch;patch=1 \
-            file://xenclient-branding.patch;patch=1 \
+            file://openxt-branding.patch;patch=1 \
             file://more-languages.patch;patch=1 \
             file://disable-right-click-menu.patch;patch=1 \
             file://fix-untranslatable-strings.patch;patch=1 \

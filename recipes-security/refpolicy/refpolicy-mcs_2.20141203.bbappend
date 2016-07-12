@@ -188,7 +188,7 @@ def get_poltype(f):
     return None
 
 RDEPENDS_${PN} = ""
-inherit xenclient
+inherit openxt
 
 POLICY_NAME = "${POL_TYPE}"
 POLICY_DISTRO = "debian"
@@ -232,7 +232,7 @@ pkg_postinst_${PN} () {
     fi
 }
 
-pkg_postinst_${PN}_append_xenclient-dom0 () {
+pkg_postinst_${PN}_append_openxt-dom0 () {
     if [ -z "$D" ]; then
         /sbin/setfiles /etc/selinux/${POL_TYPE}/contexts/files/file_contexts /config /storage
     fi

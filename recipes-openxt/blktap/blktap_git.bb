@@ -18,7 +18,7 @@ INSANE_SKIP_${PN} = "1"
 CFLAGS += "-DVHD_LOCKING -Wno-maybe-uninitialized"
 EXTRA_OEMAKE += "CROSS_COMPILE=${HOST_PREFIX}"
 
-inherit xenclient
+inherit openxt
 
 do_compile() {
 	oe_runmake USE_SYSTEM_LIBRARIES=y XEN_ROOT=${STAGING_INCDIR} CROSS_COMPILE=${HOST_PREFIX} BLKTAP_TARGET_ARCH=x86_32

@@ -26,4 +26,4 @@ do_install(){
 	oe_runmake DESTDIR=${D} BINDIR=${STAGING_BINDIR_NATIVE} install
 }
 
-inherit xenclient
+inherit openxt

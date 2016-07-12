@@ -1,7 +1,7 @@
-DESCRIPTION = "XenClient DBUS library"
+DESCRIPTION = "OpenXT DBUS library"
 LICENSE = "LGPLv2.1"
 LIC_FILES_CHKSUM = "file://COPYING;md5=321bf41f280cf805086dd5a720b37785"
-DEPENDS = "dbus dbus-glib xenclient-idl xenclient-rpcgen-native libtool libevent"
+DEPENDS = "dbus dbus-glib openxt-idl openxt-rpcgen-native libtool libevent"
 
 PV = "0+git${SRCPV}"
 
@@ -12,5 +12,5 @@ EXTRA_OECONF += "--with-idldir=${STAGING_IDLDIR}"
 
 S = "${WORKDIR}/git"
 
-inherit autotools-brokensep pkgconfig lib_package xenclient
+inherit autotools-brokensep pkgconfig lib_package openxt
 

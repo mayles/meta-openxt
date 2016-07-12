@@ -14,7 +14,7 @@ S = "${WORKDIR}/git"
 
 ASNEEDED = ""
 
-inherit autotools-brokensep xenclient
+inherit autotools-brokensep openxt
 
 do_install_append() {
     install -d ${D}/etc

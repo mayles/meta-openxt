@@ -4,7 +4,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-#RDEPENDS_${PN} = "${@base_conditional('MACHINE', 'xenclient-uivm', '', 'networkmanager', d)} notification-daemon"
+#RDEPENDS_${PN} = "${@base_conditional('MACHINE', 'openxt-uivm', '', 'networkmanager', d)} notification-daemon"
 
 RDEPENDS_${PN} = "libnmglib libnmutil libnmglib-vpn gnome-keyring networkmanager-certs"
 RRECOMMENDS_${PN} = ""
@@ -48,7 +48,7 @@ SRC_URI[archive.sha256sum] = "ebe725d0140f658c6a3f384674c72fba7a7c417df3be0e84ee
 EXTRA_OECONF += " \
                   --with-bluetooth=no \
 "
-PACKAGE_ARCH_xenclient-uivm = "${MACHINE_ARCH}"
+PACKAGE_ARCH_openxt-uivm = "${MACHINE_ARCH}"
 
 CFLAGS_append += " -Wno-error=unused-but-set-variable -Wno-deprecated-declarations -Wno-unused-function -Wno-error=declaration-after-statement"
 

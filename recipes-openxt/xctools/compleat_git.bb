@@ -18,7 +18,7 @@ S = "${WORKDIR}/git/compleat"
 LDFLAGS += "-pthread"
 CFLAGS += "-pthread"
 
-inherit xenclient
+inherit openxt
 
 do_install() {
 	install -m 0755 -d ${D}/usr

@@ -11,7 +11,7 @@ S = "${WORKDIR}"
 
 ASNEEDED = ""
 
-inherit xenclient
+inherit openxt
 
 do_install() {
 	     install -d ${D}/sbin

@@ -12,10 +12,10 @@ SRC_URI = " \
            file://host.conf \
            file://profile \
            file://fstab \
-           file://fstab.xenclient-dom0 \
-           file://fstab.xenclient-ndvm \
-           file://fstab.xenclient-uivm \
-           file://fstab.xenclient-syncvm \
+           file://fstab.openxt-dom0 \
+           file://fstab.openxt-ndvm \
+           file://fstab.openxt-uivm \
+           file://fstab.openxt-syncvm \
            file://filesystems \
            file://issue.net \
            file://issue \
@@ -138,30 +138,30 @@ do_install () {
 }
 
 
-do_install_append_xenclient-dom0 () {
+do_install_append_openxt-dom0 () {
 	install -m 0755 -d ${D}/config
 	install -m 0755 -d ${D}/var/cores
 	install -m 0755 -d ${D}/var/log
 	install -m 0755 -d ${D}/storage
         install -m 0755 -d ${D}/var/lib/dbus
-        install -m 0644 ${WORKDIR}/fstab.xenclient-dom0 ${D}${sysconfdir}/fstab
+        install -m 0644 ${WORKDIR}/fstab.openxt-dom0 ${D}${sysconfdir}/fstab
 }
 
-do_install_append_xenclient-ndvm () {
+do_install_append_openxt-ndvm () {
         install -m 0755 -d ${D}/var/lib/dbus
-        install -m 0644 ${WORKDIR}/fstab.xenclient-ndvm ${D}${sysconfdir}/fstab
+        install -m 0644 ${WORKDIR}/fstab.openxt-ndvm ${D}${sysconfdir}/fstab
 }
 
-do_install_append_xenclient-uivm () {
+do_install_append_openxt-uivm () {
 	install -m 0755 -d ${D}/var/lib/dbus
 	install -m 0755 -d ${D}/etc/NetworkManager/system-connections
 	install -m 0755 -d ${D}/root/.gconf
-        install -m 0644 ${WORKDIR}/fstab.xenclient-uivm ${D}${sysconfdir}/fstab
+        install -m 0644 ${WORKDIR}/fstab.openxt-uivm ${D}${sysconfdir}/fstab
 }
 
-do_install_append_xenclient-syncvm () {
+do_install_append_openxt-syncvm () {
 	install -m 0755 -d ${D}/var/lib/dbus
-        install -m 0644 ${WORKDIR}/fstab.xenclient-syncvm ${D}${sysconfdir}/fstab
+        install -m 0644 ${WORKDIR}/fstab.openxt-syncvm ${D}${sysconfdir}/fstab
 }
 
 do_install_append_nylon() {
