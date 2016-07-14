@@ -10,14 +10,14 @@ dep mountall.sh
 script modutils.sh
 dep
 
-script xenclient-config-access
+script openxt-config-access
 dep
 
 script urandom
-dep xenclient-config-access
+dep openxt-config-access
 
 script cryptdisks
-dep xenclient-config-access urandom
+dep openxt-config-access urandom
 
 script mountall.sh
 dep cryptdisks
@@ -44,7 +44,7 @@ dep
 script microcode_ctl
 dep surfman
 
-script xenclient-boot-sound
+script openxt-boot-sound
 dep surfman dbd
 
 script xenstored
@@ -68,7 +68,7 @@ dep xenstored dbus-1 surfman
 script rpc-proxy
 dep dbus-1 xenstored surfman
 
-script xenclient-vusb-daemon
+script openxt-vusb-daemon
 dep dbus-1 udev xenstored surfman xenmgr
 
 script xcpmd
@@ -77,7 +77,7 @@ dep dbus-1 xenstored surfman acpid dbd
 script surfman
 dep dbus-1 xenstored
 
-script xenclient-input
+script openxt-input
 dep dbus-1 xenstored surfman dbd
 
 script xenmgr

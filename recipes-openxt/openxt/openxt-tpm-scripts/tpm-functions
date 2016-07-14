@@ -232,7 +232,7 @@ configure_measured_launch()
 {
     local root="${1:-/}"
     local key_file="${root}/config/keys/config.key"
-    local config_dev="/dev/mapper/xenclient-config"
+    local config_dev="/dev/mapper/openxt-config"
     local tpm_dir="${root}/boot/system/tpm"
 
     # this will block w/o some IO to seen entropy

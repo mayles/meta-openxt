@@ -144,7 +144,7 @@ tK98gRGfnlkKfz8U3uZQscJwL2i4hNwMfTRf+kJm5yIegp2V1Wd95MZS8HsX00Fw
 -----END RSA PRIVATE KEY-----</recovery-private-key>
 <postinstall>#!/bin/ash -e
 mkdir -p /mnt/storage
-mount /dev/xenclient/storage /mnt/storage
+mount /dev/openxt/storage /mnt/storage
 mkdir -p /mnt/storage/isos
 cd /mnt/storage/isos
 # Assume the network is already available:

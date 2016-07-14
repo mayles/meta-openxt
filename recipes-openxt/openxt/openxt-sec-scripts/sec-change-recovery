@@ -27,7 +27,7 @@ err () { echo >&3 "$@"; }
 
 LVPREFIX=s-
 LVSIZE=12M
-VGNAME=xenclient
+VGNAME=openxt
 DEVKEY=/config/sec/device.key
 RAMDIR=/mnt/secure
 UKEY="${RAMDIR}/s-${user}.key"

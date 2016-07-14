@@ -23,8 +23,8 @@
 
 . /etc/init.d/functions
 
-CONFIG_LV=xenclient-config
-STORAGE_LV=xenclient-storage
+CONFIG_LV=openxt-config
+STORAGE_LV=openxt-storage
 STORAGE_DEV=/dev/mapper/${STORAGE_LV}
 STORAGE_MNT=/storage
 CONFIG_UNLOCK=0
@@ -314,7 +314,7 @@ enter the recovery passphrase to continue.
 	# secs=$(dmsetup table "${CONFIG_LV}" | cut -f2 -d\ )
 	# echo 0 ${secs} linear "/dev/mapper/${CONFIG_LV}" 0 | dmsetup create config
 	# Instead make a symlink:
-	ln -fs xenclient-config /dev/mapper/config
+	ln -fs openxt-config /dev/mapper/config
 	;;
 esac
 
@@ -360,7 +360,7 @@ fi
 [ -e /boot/system/tpm/clear-config-key ] && {
     # disable smbios key using tpm key to confirm it works
     tpm_unsealdata_sa -i /boot/system/tpm/config.tss | cryptsetup -q -d - \
-      -S 1 luksKillSlot /dev/mapper/xenclient-config 0 &&
+      -S 1 luksKillSlot /dev/mapper/openxt-config 0 &&
     rm /boot/system/tpm/clear-config-key
 }
 

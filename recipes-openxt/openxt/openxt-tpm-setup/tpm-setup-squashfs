@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-VG=xenclient
+VG=openxt
 ROOTLV=root
 
 rootsize=$(lvs | awk '($1 ~ /^'$ROOTLV'$/) { print $4 }')
@@ -38,7 +38,7 @@ mksquashfs /tmp/root.$$ /dev/$VG/$ROOTLV.sn -noappend | \
 umount /tmp/root.$$
 rmdir /tmp/root.$$
 
-lvsize=$(unsquashfs -s /dev/xenclient/root.sn | \
+lvsize=$(unsquashfs -s /dev/openxt/root.sn | \
   awk '/^Filesystem size/ {sub(/\(/,"",$5); sub(/\..*/,"",$5); print $5 + 1}')
 [ -z "$lvsize" -o "$lvsize" -lt 4 ] && {
   echo $0: lv unexpectedly small, aborting...
@@ -53,7 +53,7 @@ err=$(lvresize -f -L ${lvsize}M /dev/$VG/$ROOTLV.sn 2>&1) || {
 
 lvremove -f /dev/$VG/$ROOTLV.s >/dev/null 2>&1
 
-err=$(lvrename xenclient $ROOTLV.sn $ROOTLV.s 2>&1) || {
+err=$(lvrename openxt $ROOTLV.sn $ROOTLV.s 2>&1) || {
   echo $err
   echo $0: lvrename failed
   exit 1

@@ -48,8 +48,8 @@ fix_term()
 resize_rootfs()
 {
     SIZE=$1
-    lvresize -L+${SIZE}G /dev/mapper/xenclient-root
-    resize2fs /dev/mapper/xenclient-root
+    lvresize -L+${SIZE}G /dev/mapper/openxt-root
+    resize2fs /dev/mapper/openxt-root
 }
 
 [ $# -ge 1 ] || usage 1

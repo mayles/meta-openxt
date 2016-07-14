@@ -32,7 +32,7 @@ pw=$1
 welcome()
 {
 cat <<EOF
-XenClient $name
+OpenXT $name
 
 This application will collate the Xen dmesg output, details of the
 hardware configuration of your machine, information about the build of
@@ -108,7 +108,7 @@ main_file()
 save_from_existing_installation()
 {
     # check to see if there is a local installation:
-    vgs xenclient | grep -q xenclient || return 0
+    vgs openxt | grep -q openxt || return 0
 
     MPATH="/mnt/part1/status"
     if grep -q "storage" /proc/mounts; then

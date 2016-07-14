@@ -24,7 +24,7 @@ exec 3>&2
 err () { echo >&3 "$@"; }
 
 LVPREFIX=s-
-VGNAME=xenclient
+VGNAME=openxt
 
 sec-umount "${user}"
 

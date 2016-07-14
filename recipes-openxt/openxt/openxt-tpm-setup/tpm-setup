@@ -141,7 +141,7 @@ if [ $? -ne 0 ]; then
 fi
 
 [ -e /config/keys/config.key ] || {
-  cryptsetup luksDump /dev/xenclient/config | {
+  cryptsetup luksDump /dev/openxt/config | {
     ! grep -q '^Key Slot 7: DISABLED$' || {
       echo System recovery password was not set during install.
       while true
@@ -157,7 +157,7 @@ fi
       done
       echo "$pass1" >/mnt/secure/system-password
       get-config-key | cryptsetup -q -d - -S 7 \
-        -i 100 luksAddKey /dev/xenclient/config \
+        -i 100 luksAddKey /dev/openxt/config \
           /mnt/secure/system-password >/dev/null 2>&1 || {
           echo TPM setup couldn\'t set system recovery password
         }

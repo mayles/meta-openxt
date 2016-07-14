@@ -25,7 +25,7 @@
 
 RAMDIR=/mnt/secure
 KEYFILE="${RAMDIR}/hardware.key"
-CONFIG_LV=xenclient-config
+CONFIG_LV=openxt-config
 
 access () {
 sig=$(dd if="/dev/mapper/${CONFIG_LV}" bs=4 count=1 2>/dev/null)
@@ -96,7 +96,7 @@ LUKS)
 	# secs=$(dmsetup table "${CONFIG_LV}" | cut -f2 -d\ )
 	# echo 0 ${secs} linear "/dev/mapper/${CONFIG_LV}" 0 | dmsetup create config
 	# Instead make a symlink:
-	ln -fs xenclient-config /dev/mapper/config
+	ln -fs openxt-config /dev/mapper/config
 	;;
 esac
 

@@ -29,7 +29,7 @@ quit () { logger -t sec-new-user < /tmp/sec-new-user.log; rm /tmp/sec-new-user.l
 
 LVPREFIX=s-
 LVSIZE=4M
-VGNAME=xenclient
+VGNAME=openxt
 DEVKEY=/config/sec/device.key
 RAMDIR=/mnt/secure
 UKEY="${RAMDIR}/s-${user}.key"

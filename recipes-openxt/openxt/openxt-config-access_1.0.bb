@@ -15,5 +15,5 @@ inherit update-rc.d openxt
 do_install() {
 	install -d ${D}${sysconfdir}/init.d
 	install -m 0755 ${WORKDIR}/config-access.initscript \
-		${D}${sysconfdir}/init.d/xenclient-config-access
+		${D}${sysconfdir}/init.d/openxt-config-access
 }

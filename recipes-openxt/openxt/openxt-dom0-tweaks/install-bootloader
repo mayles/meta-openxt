@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# Script to install GRUB on the boot LV (xenclient-boot).
+# Script to install GRUB on the boot LV (openxt-boot).
 #
 # Usage: install-bootloader [language]
 #
@@ -51,10 +51,10 @@ dmsetup remove dmgrub 2> /dev/null
 
 # Ensure that the boot partition is mounted
 msg "Mounting /boot/system"
-mount /dev/mapper/xenclient-boot /boot/system 2> /dev/null || msg "Couldn't mount, already mounted?"
+mount /dev/mapper/openxt-boot /boot/system 2> /dev/null || msg "Couldn't mount, already mounted?"
 
-msg "Detecting PV partition with xenclient-boot"
-t=`dmsetup table xenclient-boot`
+msg "Detecting PV partition with openxt-boot"
+t=`dmsetup table openxt-boot`
 p=`echo "$t" | awk '{print $5}'`
 major=`echo $p | cut -f1 -d:`
 minor=`echo $p | cut -f2 -d:`
@@ -67,7 +67,7 @@ lv_absoffset=$(($pv_offset + $lv_reloffset))
 
 msg "PV partition: $pv_part"
 msg "Disk: $pv_disk"
-msg "Offset of xenclient-boot is $lv_reloffset (sector $lv_absoffset)."
+msg "Offset of openxt-boot is $lv_reloffset (sector $lv_absoffset)."
 
 if [ ! -b "/dev/$pv_disk" ]; then
   echo "Failed to detect PV disk"
@@ -103,19 +103,19 @@ ln -sf . /boot/system/boot
 # Create directory
 mkdir -p /boot/system/grub
 
-msg "Copying XenClient GRUB config and helper files"
-cp -f /usr/share/xenclient/bootloader/grub.cfg \
-      /usr/share/xenclient/bootloader/unifont.pf2 \
+msg "Copying OpenXT GRUB config and helper files"
+cp -f /usr/share/openxt/bootloader/grub.cfg \
+      /usr/share/openxt/bootloader/unifont.pf2 \
       /usr/lib/grub/i386-pc/*.img /boot/system/grub
 mkdir -p /boot/system/grub/i386-pc
 cp -f /usr/lib/grub/i386-pc/*.mod \
       /usr/lib/grub/i386-pc/*.lst \/boot/system/grub/i386-pc
 
 msg "Copying XenClient bootloader images"
-/usr/share/xenclient/install-bootloader-images "$lang"
+/usr/share/openxt/install-bootloader-images "$lang"
 
 msg "Creating core.img"
-grub-mkimage $verbose --output=/boot/system/grub/core.img --prefix="(lvm/xenclient-boot)/grub" -O i386-pc ext2 part_msdos part_gpt biosdisk lvm
+grub-mkimage $verbose --output=/boot/system/grub/core.img --prefix="(lvm/openxt-boot)/grub" -O i386-pc ext2 part_msdos part_gpt biosdisk lvm
 
 msg "Mapping dmgrub"
 dmsetup create dmgrub /tmp/table.dmgrub.tmp

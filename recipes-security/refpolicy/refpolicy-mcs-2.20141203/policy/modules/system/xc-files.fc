@@ -31,7 +31,7 @@
 /config/users(/.*)?		gen_context(system_u:object_r:xc_config_sec_t,s0)
 /config/platform-crypto-keys(/.*)?	gen_context(system_u:object_r:xc_vhd_key_t,s0)
 
-# rsyncd from /etc/NetworkManager in /etc/init.d/xenclient-config 
+# rsyncd from /etc/NetworkManager in /etc/init.d/openxt-config 
 /config/system/system-connections	-d	gen_context(system_u:object_r:etc_t,s0)
 /config/system/system-connections/.*	--	gen_context(system_u:object_r:etc_runtime_t,s0)
 
