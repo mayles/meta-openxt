@@ -1,5 +1,5 @@
-# Writes the XenClient build number, build date, version and release
-# to /etc/xenclient.conf. Also updates /etc/issue and /etc/issue.net.
+# Writes the OpenXT build number, build date, version and release
+# to /etc/issue and /etc/issue.net.
 
 OPENXT_BUILD ?= "local"
 OPENXT_BUILD_DATE ?= "unknown"
@@ -8,7 +8,7 @@ OPENXT_RELEASE ?= "unknown"
 OPENXT_TOOLS ?= "unknown"
 
 post_rootfs_version_commands() {
-	# Add /etc/xenclient.conf
+	# Add /etc/issue
 	{
 		echo 'product = OpenXT';
 		echo 'build = ${OPENXT_BUILD}';
@@ -18,15 +18,8 @@ post_rootfs_version_commands() {
 		echo 'release = ${OPENXT_RELEASE}';
 		echo 'tools = ${OPENXT_TOOLS}';
 		echo 'DefaultNICs = 0';
-	} > ${IMAGE_ROOTFS}/etc/xenclient.conf;
-
-	# Update /etc/issue and /etc/issue.net
-	{
-		echo 'OpenXT';
-		echo;
-		cat ${IMAGE_ROOTFS}/etc/xenclient.conf;
-		echo;
 	} > ${IMAGE_ROOTFS}/etc/issue;
+
 	cp ${IMAGE_ROOTFS}/etc/issue ${IMAGE_ROOTFS}/etc/issue.net;
 }
 

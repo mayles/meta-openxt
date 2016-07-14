@@ -23,7 +23,7 @@ inherit openxt-licences
 require openxt-version.inc
 
 post_rootfs_shell_commands() {
-	mv ${IMAGE_ROOTFS}/etc/xenclient.conf ${IMAGE_ROOTFS}/config/;
+	mv ${IMAGE_ROOTFS}/etc/issue ${IMAGE_ROOTFS}/config/;
 	rm -rf ${IMAGE_ROOTFS}/dev;
 	rm -rf ${IMAGE_ROOTFS}/etc;
 	rm -rf ${IMAGE_ROOTFS}/usr;

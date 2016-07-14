@@ -122,7 +122,7 @@ save_from_existing_installation()
     save_out "vhd-util scan -pM ${MPATH}/storage/disks/*.vhd" "storage-disks-scan"
     save_out 'eval for vhd in '"${MPATH}"'/storage/disks/*.vhd ; do vhd-util check -iItn $vhd ; done' "vhd-check"
     # take the version information file from the root filesystem:
-    cp "${MPATH}/etc/xenclient.conf" "${MPATH}/"
+    cp "${MPATH}/etc/issue" "${MPATH}/"
 
     save_file_exclude "`dirname ${MPATH}`" "`basename ${MPATH}`" "installation" 'certs device.key password.conf password.conf.DONE recovery-private-key.conf recovery-private-key.conf.DONE recovery-disk-key.ssl recovery-disk-key.ssl.DONE ssh_host_dsa_key ssh_host_rsa_key keys storage platform-crypto-keys'
 
@@ -147,7 +147,7 @@ save_file "/var/log" "messages*" "syslog"
 save_file "/install" "part1/data" "install-data-part1"
 save_file_exclude "/install" "part2/data" "install-data-part2" 'ca-bundle.crt recovery-private-key.conf recovery-disk-key.ssl backend-pin.conf'
 save_out "cat /var/log/installer" "installer"
-save_out "cat /etc/xenclient.conf" "xenclient.conf"
+save_out "cat /etc/issue" "issue"
 save_out "cat /var/log/installer-status" "installer-status"
 save_out "xenops dmesg" "xen_dmesg"
 save_out "dmidecode" "dmidecode"

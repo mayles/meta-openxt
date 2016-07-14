@@ -28,7 +28,7 @@ INTERFACE="com.citrix.xenclient.xenmgr"
 MEMBER="language_changed"
 
 XC_LANG=$(xec -g language)
-/usr/share/xenclient/install-bootloader-images "${XC_LANG}"
+/usr/share/openxt/install-bootloader-images "${XC_LANG}"
 
 dbus-monitor --system \
              --profile \
@@ -39,7 +39,7 @@ while read MESSAGE_TYPE X X X X MESSAGE_INTERFACE MESSAGE_MEMBER ; do
          "${MESSAGE_MEMBER}" = "${MEMBER}" ] ; then
 
         XC_LANG=$(xec -g language)
-        /usr/share/xenclient/install-bootloader-images "${XC_LANG}"
+        /usr/share/openxt/install-bootloader-images "${XC_LANG}"
 
     fi
 done

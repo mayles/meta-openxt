@@ -27,7 +27,7 @@ INITSCRIPT_PARAMS = "defaults 72"
 
 pkg_postinst_${PN} () {
     if [ ! -f $D/etc/surfman.conf ]; then
-        cp --preserve=xattr $D/usr/share/xenclient/surfman.conf $D/etc/surfman.conf || exit 1
+        cp --preserve=xattr $D/usr/share/openxt/surfman.conf $D/etc/surfman.conf || exit 1
     else
         echo "$D/etc/surfman.conf already exists"
     fi
@@ -37,11 +37,11 @@ pkg_postinst_${PN} () {
 do_install_append() {
     install -m 0755 -d ${D}${sysconfdir}/init.d
     install -m 0755 ${WORKDIR}/surfman.initscript ${D}/${sysconfdir}/init.d/surfman
-    [ ! -d ${D}/usr/share/xenclient ] && mkdir -p ${D}/usr/share/xenclient
-    install -m 0644 ${WORKDIR}/surfman.conf ${D}/usr/share/xenclient/surfman.conf
+    [ ! -d ${D}/usr/share/openxt ] && mkdir -p ${D}/usr/share/openxt
+    install -m 0644 ${WORKDIR}/surfman.conf ${D}/usr/share/openxt/surfman.conf
 }
 
 FILES_${PN} += "\
-                /usr/share/xenclient/surfman.conf \
+                /usr/share/openxt/surfman.conf \
 		screenshot \
                 "

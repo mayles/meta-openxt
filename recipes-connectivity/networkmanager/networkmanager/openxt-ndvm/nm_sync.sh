@@ -31,7 +31,7 @@ usage()
     exit $1
 }
 
-nm_scripts=/usr/share/xenclient/nm_scripts
+nm_scripts=/usr/share/openxt/nm_scripts
 syscon=/etc/NetworkManager/system-connections
 nmstate=/var/lib/NetworkManager
 DBNODE=""

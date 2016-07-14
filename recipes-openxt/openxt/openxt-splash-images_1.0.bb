@@ -17,16 +17,16 @@ PACKAGES = "${PN}"
 FILES_${PN} = "/"
 
 do_install () {
-	install -d ${D}/usr/share/xenclient/bootloader/images
+	install -d ${D}/usr/share/openxt/bootloader/images
 	install -m 0644 ${WORKDIR}/black.png \
-			${D}/usr/share/xenclient/bootloader/images/
+			${D}/usr/share/openxt/bootloader/images/
 
 	for l in en-us ; do
-	    install -d ${D}/usr/share/xenclient/bootloader/images/$l
+	    install -d ${D}/usr/share/openxt/bootloader/images/$l
 	    for f in booting reboot please-reboot shutdown hibernate startup ; do
 		install -m 0644 ${WORKDIR}/$f-$l.png \
-			${D}/usr/share/xenclient/bootloader/images/$l/$f.png
-		ln -sf ../black.png ${D}/usr/share/xenclient/bootloader/images/$l/
+			${D}/usr/share/openxt/bootloader/images/$l/$f.png
+		ln -sf ../black.png ${D}/usr/share/openxt/bootloader/images/$l/
 	    done
 	done
 }

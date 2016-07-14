@@ -26,7 +26,7 @@ EXECUTABLE=/usr/sbin/xenstored
 start() {
 	echo -n "Starting xenstored: "
 	$EXECUTABLE --pid-file $PIDFILE 2> /dev/null 2>&1
-	for i in /usr/share/xenclient/xenstore-init*;
+	for i in /usr/share/openxt/xenstore-init*;
 	do
 		$i > /dev/null 2>&1;
 	done

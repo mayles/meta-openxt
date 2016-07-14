@@ -22,11 +22,11 @@ do_install () {
 	install -m 0644 ${WORKDIR}/iwlwifi.conf \
 		${D}/etc/modprobe.d/iwlwifi.conf
 
-	install -d ${D}/usr/share/xenclient
+	install -d ${D}/usr/share/openxt
 	install -m 0755 ${WORKDIR}/enter-s3.sh \
-		${D}/usr/share/xenclient/enter-s3.sh
+		${D}/usr/share/openxt/enter-s3.sh
 	install -m 0755 ${WORKDIR}/xenstore-init \
-		${D}/usr/share/xenclient/xenstore-init
+		${D}/usr/share/openxt/xenstore-init
 
 	install -d ${D}/etc/NetworkManager/system-connections
 	install -m 0644 ${WORKDIR}/netcon \

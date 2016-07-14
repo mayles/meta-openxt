@@ -17,7 +17,7 @@ do_compile() {
 do_install() {
 	install -d ${D}/boot
 	install -m 444 tboot/tboot.gz ${D}/boot/
-        install -d ${D}/usr/share/xenclient
+        install -d ${D}/usr/share/openxt
 	oe_runmake -C ${S}/tb_polgen install DISTDIR=${D} 
 	oe_runmake -C ${S}/lcptools install DISTDIR=${D}
 	oe_runmake -C ${S}/utils install DISTDIR=${D}
@@ -29,5 +29,5 @@ FILES_${PN} += " \
         /boot/tboot.gz \
         /usr/sbin/txt-stat \
         /usr/sbin/parse_err \
-        /usr/share/xenclient \
+        /usr/share/openxt \
 "

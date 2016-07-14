@@ -24,7 +24,7 @@ INITSCRIPT_NAME = "xenmgr"
 INITSCRIPT_PARAMS = "start 80 5 . stop 01 0 1 6 ."
 
 FILES_${PN} += "/usr/bin/xenmgr /etc/dbus-1/system.d/xenmgr_dbus.conf /etc/init.d/xenmgr /usr/share/xenmgr-1.0/templates/default/*"
-FILES_${PN} += "/usr/share/xenclient"
+FILES_${PN} += "/usr/share/openxt"
 
 do_configure_append() {
     # generate rpc stubs
@@ -51,8 +51,8 @@ do_install() {
     install -m 0755 -d ${D}/etc
     install -m 0755 -d ${D}/etc/dbus-1/system.d
     install -m 0644 ${WORKDIR}/xenmgr_dbus.conf ${D}/etc/dbus-1/system.d/
-    install -m 0755 -d ${D}/usr/share/xenclient
-    install -m 0755 ${WORKDIR}/xenstore-init-extra ${D}/usr/share/xenclient/
+    install -m 0755 -d ${D}/usr/share/openxt
+    install -m 0755 ${WORKDIR}/xenstore-init-extra ${D}/usr/share/openxt/
     install -m 0755 -d ${D}${sysconfdir}/init.d
     install -m 0755 ${WORKDIR}/xenmgr.initscript ${D}${sysconfdir}/init.d/xenmgr
     install -m 0755 -d ${D}/usr/share/xenmgr-1.0/templates

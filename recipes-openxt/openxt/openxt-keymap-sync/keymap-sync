@@ -24,8 +24,8 @@
 #
 # Keeps the uivm keyboard layout in sync with dom0.
 
-KEYBOARD_LIST=/usr/share/xenclient/keyboards
-XENSTORE_KEY=/xenclient/keyboard/layout
+KEYBOARD_LIST=/usr/share/openxt/keyboards
+XENSTORE_KEY=/openxt/keyboard/layout
 UIM_TOOLBAR_PID_FILE=/tmp/uim-toolbar-gtk.pid
 OLD_KEYBOARD=
 

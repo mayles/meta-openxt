@@ -27,7 +27,7 @@
 
 DEFAULT_LANGUAGE="en-us"
 SAVED_LANGUAGE_FILE="/boot/system/config/grub-language.conf"
-IMAGES_DIR="/usr/share/xenclient/bootloader/images"
+IMAGES_DIR="/usr/share/openxt/bootloader/images"
 
 if [ $# -eq 0 ]; then
     LANGUAGE=

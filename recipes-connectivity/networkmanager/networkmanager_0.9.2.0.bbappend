@@ -43,10 +43,10 @@ do_install_append () {
 
 }
 FILES_${PN}_append_openxt-ndvm += " \
-                 /usr/share/xenclient/nm_scripts/db_to_nm.awk \
-                 /usr/share/xenclient/nm_scripts/nm_to_db.awk \
-                 /usr/share/xenclient/nm_scripts/WiredEthernetConnection \
-                 /usr/share/xenclient/nm_scripts/NetworkManager.conf \
+                 /usr/share/openxt/nm_scripts/db_to_nm.awk \
+                 /usr/share/openxt/nm_scripts/nm_to_db.awk \
+                 /usr/share/openxt/nm_scripts/WiredEthernetConnection \
+                 /usr/share/openxt/nm_scripts/NetworkManager.conf \
                  /usr/bin/nm_sync.sh \
 "
 
@@ -63,11 +63,11 @@ B = "${S}"
 
 do_install_append_openxt-ndvm() {
         install -m 0755 ${WORKDIR}/nm_sync.sh ${D}/usr/bin/nm_sync.sh
-        install -d ${D}/usr/share/xenclient/nm_scripts
-        install -m 0755 ${WORKDIR}/db_to_nm.awk ${D}/usr/share/xenclient/nm_scripts/db_to_nm.awk
-        install -m 0755 ${WORKDIR}/nm_to_db.awk ${D}/usr/share/xenclient/nm_scripts/nm_to_db.awk
-        install -m 0755 ${WORKDIR}/WiredEthernetConnection ${D}/usr/share/xenclient/nm_scripts/WiredEthernetConnection
-        install -m 0644 ${D}/etc/NetworkManager/NetworkManager.conf ${D}/usr/share/xenclient/nm_scripts/
+        install -d ${D}/usr/share/openxt/nm_scripts
+        install -m 0755 ${WORKDIR}/db_to_nm.awk ${D}/usr/share/openxt/nm_scripts/db_to_nm.awk
+        install -m 0755 ${WORKDIR}/nm_to_db.awk ${D}/usr/share/openxt/nm_scripts/nm_to_db.awk
+        install -m 0755 ${WORKDIR}/WiredEthernetConnection ${D}/usr/share/openxt/nm_scripts/WiredEthernetConnection
+        install -m 0644 ${D}/etc/NetworkManager/NetworkManager.conf ${D}/usr/share/openxt/nm_scripts/
 }
 
 SYSTEMD_SERVICE = ""

@@ -17,7 +17,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-SCRIPT=/usr/share/xenclient/firstboot.sh
+SCRIPT=/usr/share/openxt/firstboot.sh
 FLAG=/boot/system/firstboot
 
 case "$1" in

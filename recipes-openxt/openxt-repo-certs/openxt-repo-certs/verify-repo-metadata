@@ -2,8 +2,8 @@
 #
 # Verifies the integrity of the metadata files in a XenClient repository.
 
-PROD_CERT_FILE="/usr/share/xenclient/repo-certs/prod/cert.pem"
-DEV_CERT_FILE="/usr/share/xenclient/repo-certs/dev/cert.pem"
+PROD_CERT_FILE="/usr/share/openxt/repo-certs/prod/cert.pem"
+DEV_CERT_FILE="/usr/share/openxt/repo-certs/dev/cert.pem"
 
 parse_args()
 {

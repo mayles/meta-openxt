@@ -51,30 +51,30 @@ do_install () {
 	install -m 0755 ${WORKDIR}/firstboot.initscript \
 		${D}/etc/init.d/firstboot
 
-	install -d ${D}/usr/share/xenclient
+	install -d ${D}/usr/share/openxt
 	install -m 0755 ${WORKDIR}/enter-s3.sh \
-		${D}/usr/share/xenclient/enter-s3.sh
+		${D}/usr/share/openxt/enter-s3.sh
 	install -m 0755 ${WORKDIR}/install-bootloader \
-		${D}/usr/share/xenclient/install-bootloader
+		${D}/usr/share/openxt/install-bootloader
 	install -m 0755 ${WORKDIR}/install-bootloader-images \
-		${D}/usr/share/xenclient/install-bootloader-images
+		${D}/usr/share/openxt/install-bootloader-images
 	install -m 0755 ${WORKDIR}/xenstore-init \
-		${D}/usr/share/xenclient/xenstore-init
+		${D}/usr/share/openxt/xenstore-init
 	install -m 0755 ${WORKDIR}/dom0_add_vif.sh \
-		${D}/usr/share/xenclient/dom0_add_vif.sh
+		${D}/usr/share/openxt/dom0_add_vif.sh
 	install -m 0755 ${WORKDIR}/firstboot.sh \
-		${D}/usr/share/xenclient/firstboot.sh
+		${D}/usr/share/openxt/firstboot.sh
 
 	install -d ${D}/usr/bin
 	install -m 0755 ${WORKDIR}/create-ndvm \
 		${D}/usr/bin/create-ndvm
 
 	# Useless cruft should be in installer
-	install -d ${D}/usr/share/xenclient/bootloader
+	install -d ${D}/usr/share/openxt/bootloader
 	install -m 0644 ${WORKDIR}/grub.cfg \
-		${D}/usr/share/xenclient/bootloader
+		${D}/usr/share/openxt/bootloader
 	install -m 0644 ${WORKDIR}/unifont.pf2 \
-		${D}/usr/share/xenclient/bootloader
+		${D}/usr/share/openxt/bootloader
 
 	mkdir -p ${D}/opt/xensource
 	ln -sf /usr/bin ${D}/opt/xensource/libexec

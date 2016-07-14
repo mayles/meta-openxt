@@ -6,4 +6,4 @@ Index: refpolicy/policy/modules/contrib/firstboot.fc
  /usr/sbin/firstboot	--	gen_context(system_u:object_r:firstboot_exec_t,s0)
  
  /usr/share/firstboot/firstboot\.py	--	gen_context(system_u:object_r:firstboot_exec_t,s0)
-+/usr/share/xenclient/firstboot\.sh	--	gen_context(system_u:object_r:firstboot_exec_t,s0)
++/usr/share/openxt/firstboot\.sh	--	gen_context(system_u:object_r:firstboot_exec_t,s0)

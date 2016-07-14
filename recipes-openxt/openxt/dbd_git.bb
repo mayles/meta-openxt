@@ -17,7 +17,7 @@ SRC_URI += "file://dbd.initscript \
             file://db.default \
 "
 
-FILES_${PN} += "/usr/share/xenclient/db.default"
+FILES_${PN} += "/usr/share/openxt/db.default"
 
 S = "${WORKDIR}/git/dbd"
 
@@ -49,8 +49,8 @@ do_install() {
     install -m 0755 ${WORKDIR}/dbd.initscript ${D}${sysconfdir}/init.d/dbd
     install -m 0755 -d ${D}/usr
     install -m 0755 -d ${D}/usr/share
-    install -m 0755 -d ${D}/usr/share/xenclient
-    install -m 0644 ${WORKDIR}/db.default ${D}/usr/share/xenclient/db.default
+    install -m 0755 -d ${D}/usr/share/openxt
+    install -m 0644 ${WORKDIR}/db.default ${D}/usr/share/openxt/db.default
 }
 
 # Avoid GNU_HASH check for the ocaml binaries
