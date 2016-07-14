@@ -58,11 +58,11 @@ EOF
 
 
 	## postinst
-	[ -z "${XENCLIENT_TOOLS}" ] && ( set -e; echo "error: XENCLIENT_TOOLS is empty"; exit 1 )
-	XCT_MAJORVERSION=$(echo "${XENCLIENT_TOOLS}" | cut -d. -f1)
-	XCT_MINORVERSION=$(echo "${XENCLIENT_TOOLS}" | cut -d. -f2)
-	XCT_MICROVERSION=$(echo "${XENCLIENT_TOOLS}" | cut -d. -f3)
-	XCT_BUILDVERSION=$(echo "${XENCLIENT_TOOLS}" | cut -d. -f4)
+	[ -z "${OPENXT_TOOLS}" ] && ( set -e; echo "error: OPENXT_TOOLS is empty"; exit 1 )
+	XCT_MAJORVERSION=$(echo "${OPENXT_TOOLS}" | cut -d. -f1)
+	XCT_MINORVERSION=$(echo "${OPENXT_TOOLS}" | cut -d. -f2)
+	XCT_MICROVERSION=$(echo "${OPENXT_TOOLS}" | cut -d. -f3)
+	XCT_BUILDVERSION=$(echo "${OPENXT_TOOLS}" | cut -d. -f4)
 	cat - <<EOF > "DEBIAN/postinst"
 #!/bin/sh
 

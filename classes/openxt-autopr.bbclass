@@ -9,7 +9,7 @@ def get_xc_auto_pr(d):
     from bb import error, note, debug
     from bb.parse import mark_dependency
 
-    oexcdir = os.path.normpath(d.getVar("OE_XENCLIENT_DIR", True))
+    oexcdir = os.path.normpath(d.getVar("OE_OPENXT_DIR", True))
     file = d.getVar("FILE", True)
     filedir = os.path.normpath(os.path.dirname(file))
     #note("FILE: %s FILEDIR: %s" % (file, filedir))

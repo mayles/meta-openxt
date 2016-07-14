@@ -1,22 +1,22 @@
 # Writes the XenClient build number, build date, version and release
 # to /etc/xenclient.conf. Also updates /etc/issue and /etc/issue.net.
 
-XENCLIENT_BUILD ?= "local"
-XENCLIENT_BUILD_DATE ?= "unknown"
-XENCLIENT_VERSION ?= "local"
-XENCLIENT_RELEASE ?= "unknown"
-XENCLIENT_TOOLS ?= "unknown"
+OPENXT_BUILD ?= "local"
+OPENXT_BUILD_DATE ?= "unknown"
+OPENXT_VERSION ?= "local"
+OPENXT_RELEASE ?= "unknown"
+OPENXT_TOOLS ?= "unknown"
 
 post_rootfs_version_commands() {
 	# Add /etc/xenclient.conf
 	{
 		echo 'product = OpenXT';
-		echo 'build = ${XENCLIENT_BUILD}';
-		echo 'build_date = ${XENCLIENT_BUILD_DATE}';
-		echo 'build_branch = ${XENCLIENT_BUILD_BRANCH}';
-		echo 'version = ${XENCLIENT_VERSION}';
-		echo 'release = ${XENCLIENT_RELEASE}';
-		echo 'tools = ${XENCLIENT_TOOLS}';
+		echo 'build = ${OPENXT_BUILD}';
+		echo 'build_date = ${OPENXT_BUILD_DATE}';
+		echo 'build_branch = ${OPENXT_BUILD_BRANCH}';
+		echo 'version = ${OPENXT_VERSION}';
+		echo 'release = ${OPENXT_RELEASE}';
+		echo 'tools = ${OPENXT_TOOLS}';
 		echo 'DefaultNICs = 0';
 	} > ${IMAGE_ROOTFS}/etc/xenclient.conf;
 

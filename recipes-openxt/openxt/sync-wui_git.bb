@@ -3,11 +3,11 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=4641e94ec96f98fabc56ff9cc48be14b"
 DEPENDS = "dojosdk-native"
 
-XENCLIENT_BUILD ?= "unknown"
-XENCLIENT_BUILD_DATE ?= "unknown"
-XENCLIENT_BUILD_BRANCH ?= "unknown"
-XENCLIENT_VERSION ?= "unknown"
-XENCLIENT_RELEASE ?= "unknown"
+OPENXT_BUILD ?= "unknown"
+OPENXT_BUILD_DATE ?= "unknown"
+OPENXT_BUILD_BRANCH ?= "unknown"
+OPENXT_VERSION ?= "unknown"
+OPENXT_RELEASE ?= "unknown"
 
 PV = "0+git${SRCPV}"
 
@@ -27,11 +27,11 @@ do_compile() {
     make
 
     cat <<EOF > VERSION
-build = ${XENCLIENT_BUILD}
-build_date = ${XENCLIENT_BUILD_DATE}
-build_branch = ${XENCLIENT_BUILD_BRANCH}
-version = ${XENCLIENT_VERSION}
-release = ${XENCLIENT_RELEASE}
+build = ${OPENXT_BUILD}
+build_date = ${OPENXT_BUILD_DATE}
+build_branch = ${OPENXT_BUILD_BRANCH}
+version = ${OPENXT_VERSION}
+release = ${OPENXT_RELEASE}
 EOF
 }
 

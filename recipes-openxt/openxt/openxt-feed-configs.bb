@@ -4,7 +4,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 
 #RRECOMMENDS_${PN} += "opkg-nogpg-nocurl"
 
-PV = "${XENCLIENT_BUILD}"
+PV = "${OPENXT_BUILD}"
 PR = "r15"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -20,7 +20,7 @@ do_compile() {
 	done
 
         for i in all ${MACHINE_ARCH} ${TUNE_PKGARCH}; do
-            echo "src/gz $i ${XENCLIENT_PACKAGE_FEED_URI}/$i" > ${S}/${sysconfdir}/opkg/$i-feed.conf
+            echo "src/gz $i ${OPENXT_PACKAGE_FEED_URI}/$i" > ${S}/${sysconfdir}/opkg/$i-feed.conf
         done
 }
 
