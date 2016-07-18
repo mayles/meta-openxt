@@ -1,7 +1,7 @@
-diff --git a/part2/stages/Make-XC-partition b/part2/stages/Make-XC-partition
+diff --git a/part2/stages/Make-partition b/part2/stages/Make-partition
 index bbc711c..d8d5285 100755
---- a/part2/stages/Make-XC-partition
-+++ b/part2/stages/Make-XC-partition
+--- a/part2/stages/Make-partition
++++ b/part2/stages/Make-partition
 @@ -160,6 +160,7 @@ x
  b
  ${PARTITION_NUM}
